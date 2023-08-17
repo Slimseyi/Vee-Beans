@@ -1,3 +1,20 @@
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--chocoa-dip);
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-bakgr); 
+}
+
+
+/* GOOGLE FONTS */
+
 @font-face{
 	font-family: Imp-scr;
 	src:url(./fonts/ImperialScript-Regular.ttf);
@@ -43,6 +60,37 @@
 	src: url(./fonts/CreteRound-Regular.ttf);
 }
 
+/* KEY FRAMES */
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%}
+}
+
+@keyframes button-background{
+	from{background-color: #3A3813;}
+	to{background-color: var(--white-col);}
+	from{color: var(--white-col);}
+	to{color: var(--dip-color);}
+}
+
+
+/* CSS VARIABLES */
+
 :root{
 	--dip-color: #3A3813;
 	--light-color:#f0e7e0;
@@ -52,24 +100,25 @@
 	--behind:-1;
 	--ontop:1000;
 	--point:pointer;
+	--chocoa-dip: #3a2e2e;
+	--chocoa-dipper: #2b2222;
 }
 
-.background-blur{
-	background-image: url("images/light-backgr.jpg");
-	width: 100%;
-	height: 100vh;
-	background-size: cover;
-	background-repeat: no-repeat;
-	position: fixed;
-	z-index: var(--behind);
+html{
+	scroll-behavior: smooth;
 }
+
 
 body{
-	background-color: none;
+	background-image: url("images/new-blur-backgr.png");;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
+
 .head-container{
-	background-color: #B8A082;
+	background-color: #3a2e2e;
 	box-shadow: 1px 0px 9px var(--dip-color);
 	width: 2000px;
 	height: 110px;
@@ -112,7 +161,7 @@ h5{
 .btn-logs2, .btn-logs1{
 	color: #ffffff;
 	font-size: 12px;
-	background-color: #3A3813;
+	background-color: #B8A082;
 	font-family: rob-medium ;
 	padding: 8px 6px;
 	text-decoration: none;
@@ -120,13 +169,6 @@ h5{
 	border-radius: 7px;
 }
 
-@keyframes button-background{
-	from{background-color: #3A3813;}
-	to{background-color: var(--white-col);}
-	from{color: var(--white-col);}
-	to{color: var(--dip-color);}
-
-}
 
 .btn-logs2:hover{
 	color: #363636;
@@ -176,8 +218,40 @@ h5{
 }
 
 .btn:hover{
-	color: var(--black-col);
-	border-bottom: 2px solid #2c2323;
+	color: #B8A082;
+	border-bottom: 2px solid #B8A082;
+}
+
+.head-notes{
+display: flex;
+flex-direction: row;
+width: 120rem;
+height: 40px;
+border: 0.3px solid var(--chocoa-dip);
+background: rgba(58, 46, 46, 0.04);
+position: fixed;
+top: 6.9rem;
+}
+
+.head-date{
+	font-size: 12px;
+	margin-top: 13px;
+	margin-left: 4rem;
+	font-family: sans-serif;
+	color: var(--light-color);
+}
+
+.head-phone{
+	font-size: 12px;
+	margin-top: 13px;
+	margin-left: 32rem;
+	font-family: sans-serif;
+	color: var(--light-color);
+}
+
+.head-phone:hover{
+	color: var(--light-bakgr);
+	cursor: var(--point);
 }
 
 .two-cups{
@@ -187,15 +261,28 @@ h5{
 	top: 10rem;
 }
 
+.head-email{
+	font-size: 12px;
+	margin-top: 13px;
+	margin-left:4rem;
+	font-family: sans-serif;
+	color: var(--light-color);
+}
+
+.head-email:hover{
+	color: var(--light-bakgr);
+	cursor: var(--point);
+}
+
 .typewriter h2 {
   font-family: opsans-reg;
-  color: var(--black-col);
+  color: var(--light-color);
   font-size: 34px;
   overflow: hidden; 
   white-space: nowrap; 
   margin: 0; 
   letter-spacing: .1em; 
-  animation: typing 5.5s steps(40, end);
+  animation: typing 4.5s steps(40, end);
 }
 
 .typewriter{
@@ -204,14 +291,10 @@ h5{
 	left: 3rem;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%}
-}
 
 .typewriter2 h4{
   font-family: inter ;
-  color: var(--black-col);
+ color: var(--light-color);
   font-size: 24px;
   overflow: hidden; 
   white-space: nowrap; 
@@ -265,23 +348,23 @@ h5{
 .our-coffee-case1 h2{
 	font-family: inter;
 	width: 40rem;
-	color: var(--dip-color);
+	color: var(--light-color);
 	font-weight: bolder;
 	font-variant: small-caps;
 	position: absolute;
 	left: 20rem;
-	bottom: 156.3rem;
+	bottom: 425rem;
 	text-decoration: underline;
 }
 
 .our-coffee-case1 h3{
-	color: var(--dip-color);
+  color: var(--light-color); 
 	font-size: 15px;
 	font-family: inter;
 	width: 400px;
 	position: absolute;
 	left: 20rem;
-	bottom: 147rem;
+	bottom: 416rem;
 	word-spacing: 0.5px;
 }
 
@@ -315,7 +398,7 @@ h5{
 
 .our-coffee-case2 h2{
 	font-family: inter;
-	color: var(--dip-color);
+	color: var(--light-color);
 	font-weight: bolder;
 	font-variant: small-caps;
 	position: absolute;
@@ -325,7 +408,7 @@ h5{
 }
 
 .our-coffee-case2 h3{
-	color: var(--dip-color);
+	color: var(--light-color);
 	font-size: 15px;
 	font-family: inter;
 	width: 400px;
@@ -361,7 +444,7 @@ h5{
 
 .our-coffee-case3 h2{
 	font-family: inter;
-	color: var(--dip-color);
+	color: var(--light-color);
 	font-weight: bolder;
 	font-variant: small-caps;
 	position: absolute;
@@ -371,7 +454,7 @@ h5{
 }
 
 .our-coffee-case3 h3{
-	color: var(--dip-color);
+	color: var(--light-color);
 	font-size: 15px;
 	font-family: inter;
 	width: 400px;
@@ -399,30 +482,30 @@ h5{
 	width: 220px;
 	height: 180px;
 	border-radius: 10px;
-	margin-top: 9.5rem;
+	margin-top: 7rem;
 	margin-left: 33px;
 }
 
 .our-coffee-case4 h2{
 	font-family: inter;
-	color: var(--dip-color);
+	color: var(--light-color);
 	font-weight: bolder;
 	font-variant: small-caps;
 	width: 300px;
 	position: absolute;
 	left: 20rem;
-	bottom: 13rem;
+	bottom: 15rem;
 	text-decoration: underline;
 }
 
 .our-coffee-case4 h3{
-	color: var(--dip-color);
+	color: var(--light-color);
 	font-size: 15px;
 	font-family: inter;
 	width: 400px;
 	position: absolute;
 	left: 20rem;
-	bottom: 4.8rem;
+	bottom: 7rem;
 	word-spacing: 0.5px;
 }
 
@@ -484,6 +567,12 @@ h5{
   border-radius: 12px;
 }
 
+.overlay-image1:hover{
+	 transform: rotate(10deg);
+	 opacity: 0.7;
+	 cursor: var(--point);
+}
+
 .overlay-text1 {
   font-size: 32px;
   position: absolute;
@@ -511,10 +600,17 @@ h5{
   border-radius: 12px;
 }
 
+.overlay-image2:hover{
+	 transform: rotate(10deg);
+	 opacity: 0.7;
+	 cursor: var(--point);
+}
+
 .overlay-text2 {
   font-size: 32px;
   position: absolute;
   top: 14.8rem;
+  right: 8rem;
   color: var(--light-color); 
   font-family:paci-reg  ;
 }
@@ -535,6 +631,12 @@ h5{
   width: 150px;
   height: 120px;
   border-radius: 12px;
+}
+
+.overlay-image3:hover{
+	 transform: rotate(10deg);
+	 opacity: 0.7;
+	 cursor: var(--point);
 }
 
 .overlay-text3 {
@@ -570,11 +672,17 @@ h5{
   border-radius: 12px;
 }
 
+.overlay-image4:hover{
+	 transform: rotate(10deg);
+	 opacity: 0.7;
+	 cursor: var(--point);
+}
+
 .overlay-text4 {
   font-size: 32px;
   position: absolute;
   top: 3rem;
-  left: 45rem;
+  left: 42rem;
   width: 350px;
   color: var(--light-color); 
   font-family:paci-reg  ;
@@ -599,11 +707,17 @@ h5{
   border-radius: 12px;
 }
 
+.overlay-image5:hover{
+	 transform: rotate(10deg);
+	 opacity: 0.7;
+	 cursor: var(--point);
+}
+
 .overlay-text5 {
   font-size: 32px;
   position: absolute;
   top: 17.5rem;
-  left: 45rem;
+  left: 42rem;
   width: 350px;
   color: var(--light-color); 
   font-family:paci-reg  ;
@@ -628,11 +742,17 @@ h5{
   border-radius: 12px;
 }
 
+.overlay-image6:hover{
+	 transform: rotate(10deg);
+	 opacity: 0.7;
+	 cursor: var(--point);
+}
+
 .overlay-text6 {
   font-size: 32px;
   position: absolute;
   top: 31rem;
-  left: 45rem;
+  left: 42rem;
   width: 350px;
   color: var(--light-color); 
   font-family:paci-reg  ;
@@ -659,13 +779,185 @@ h5{
 	left: 71rem;
 	width: 150px;
 	border: none;
-	padding:8px 14px 8px 14px;
-	
+	padding:8px 14px 8px 14px;	
+}
+
+.more-menu:hover{
+	animation: shake 0.5s;
+	background-color: #2b2222;
+	color: var(--light-color);
+}
+
+.gallery-container{
+	margin-left: 28px;
+	margin-top: 50px;
+	background-color: #E7DBD1;
+	width: 3000px;
+	height: 235rem;
+	align-items: center;
+}
+
+.gallery-h1{
+	color: var(--chocoa-dip);
+	text-align: center;
+	font-family: inter;
+	margin-top: 77px;
+}
+
+.under-line{
+	border: 0.5px solid var(--chocoa-dipper);
+	width: 55px;
+	margin-left: 33rem;
+	margin-top: 1rem;
+}
+
+.gallery-container img{
+	width: 900px;
+	height: 780px;
+	margin-left: 7rem;
+	margin-top: 4rem;
+}
+
+.gallery-container img:hover{
+	transform: scale(1.2);
+	cursor: pointer;
+}
+
+.gallery-h5{
+	color: var(--chocoa-dipper);
+	margin-top: 12px;
+	margin-right: 99px;
+	text-align: right;
+}
+
+.spacer{
+	height: 110px;
+}
+
+.newsletter-form-connect {
+	background: rgba(184, 160, 130, 0.59);
+	color: var(--light-color);
+	margin-left: 25px;
+	width: 120rem;
+	padding-top: 66px;
+	height: 23rem;
+	text-align: center;
+}
+
+.newsletter-form h3{
+
+}
+
+.email-box{
+	height: 200px;
+	margin-top: 22px;
+	justify-content: center;
+}
+
+.email-box i{
+	background-color: var(--chocoa-dipper);
+	position: relative;
+	width: 30px;
+	height: 30px;
+	font-size: 17px;
+	line-height: 30px;
+	text-align: center;
+	color: var(--light-color);
+}
+
+.t-button{
+	color: var(--light-color);
+	height: 32px;
+	width: 100px;
+	position: relative;
+	background-color: var(--chocoa-dipper);
+	border: none;
+	cursor: pointer;
+}
+
+.text-box{
+	height: 2px;
+	width: 0px;
+	background-color: var(--light-color);
+	border: none;
+	transition: 0.6s;
 }
 
 
+.email-box:hover > .text-box, .text-box:focus{
+	padding-left: 38px;
+	width: 270px;
+	height: 30px;
+}
+
+.connect-us{
+	position: relative;
+	bottom: 6rem;
+	right: 5rem;
+	display: inline-block;
+}
+
+.connect-us h4{
+	font-family: rob-medium;
+	animation: none;
+	display: inline-block;
+}
 
 
+.connect-us i{
+	position: absolute;
+	left: 12rem;
+	background-color: var(--chocoa-dipper);
+	padding-top: 7px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+.face{
+	margin-left: 5px;
+}
+
+.link{
+	margin-left: 70px;
+}
+
+.twit{
+	margin-left: 135px;
+}
+
+.mail{
+	margin-left: 205px;
+}
+
+.insta{
+	margin-left: 205px;
+}
+
+.face, .link, .twit, .mail, .insta{
+	cursor: pointer;
+}
+
+.the-foot{
+	background-color: var(--chocoa-dipper);
+	position: relative;
+	right: 100px;
+	top: 66px;
+	width: 1353px;
+	height: 110px;
+}
+
+.the-foot img{
+	width: 31px;
+	margin-right: 15rem;
+	margin-top: 20px;
+}
+
+.the-foot p{
+	position: absolute;
+	left: 45%;
+	bottom: 30px;
+}
 
 
 
@@ -689,14 +981,11 @@ h5{
 	and (height:896px)
 	and (-webkit-device-pixel-ratio: 2){
 
-		.background-blur{
-		position: fixed;
+.background-blur{
+	position: fixed;
 	width: 100%;
 	height: 100vh;
-	z-index: var(--ontop);
-	overflow: hidden;
 	background-size: cover;
-	background-image: none;
 }
 
 	}
