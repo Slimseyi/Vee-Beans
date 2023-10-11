@@ -71,17 +71,20 @@ html{
   font-size: 62.5%;
   scroll-padding-top: 9rem;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body{
-  background-image: url("./images/all-backg.png");
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow-x: hidden;
 }
 
 section{
   padding: 9rem 7%;
 }
-
 
 
 .header{
@@ -184,6 +187,12 @@ section{
   color: var(--sec-color);
 }
 
+.about{
+  background: url(./images/all-backg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .about .row{
   display: flex;
   align-items: center;
@@ -237,6 +246,12 @@ section{
   color: var(--bg-color-dipper);
 }
 
+.menu{
+  background: url(./images/all-backg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .menu .box-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -275,6 +290,12 @@ section{
 
 .menu .box-container .box:hover{
  border: 1px solid var(--sec-color);
+}
+
+.shop{
+  background: url(./images/all-backg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .shop .box-container{
@@ -335,7 +356,11 @@ section{
 
 
 
-
+.customers{
+  background: url(./images/all-backg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 .review-container{
   display: grid;
@@ -400,6 +425,12 @@ section{
 
 .fade-in-delay.appear-delay{
   opacity: 1;
+}
+
+.contact{
+  background: url(./images/all-backg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .contact .row{
@@ -481,7 +512,6 @@ input:focus::placeholder{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, auto));
   gap: 1.5rem;
-
 }
 
 .footer-box h3{
