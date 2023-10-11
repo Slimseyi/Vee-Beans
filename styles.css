@@ -427,12 +427,6 @@ section{
   opacity: 1;
 }
 
-.contact{
-  background: url(./images/all-backg.png) no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 .contact .row{
   display: flex;
   align-items: center;
